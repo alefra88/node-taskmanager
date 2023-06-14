@@ -1,0 +1,1 @@
+const connectionString = 'mongodb+srv://<alanef88>:<a4969a>@cluster0.3narixn.mongodb.net/?retryWrites=true&w=majority'
