@@ -3,7 +3,7 @@ const app = express();
 const tasks = require("./routes/tasks");
 const bodyParser = require("body-parser");
 const connectDB = require("./db/connect");
-
+require("dotenv").config();
 //MIDDLEWARE
 app.use(express.json());
 app.use(bodyParser.json());
@@ -19,7 +19,7 @@ const port = 3000;
 
 const start = async () => {
   try {
-    await connectDB();
+    await connectDB(process.env.MONGO_URI);
     app.listen(port, console.log(`server is listening on port ${port}...`));
   } catch (error) {
     console.log(error);
