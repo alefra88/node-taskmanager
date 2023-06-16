@@ -1,12 +1,12 @@
 const express = require("express");
 const app = express();
 const tasks = require("./routes/tasks");
-const bodyParser = require("body-parser");
+// const bodyParser = require("body-parser");
 const connectDB = require("./db/connect");
 require("dotenv").config();
 //MIDDLEWARE
 app.use(express.json());
-app.use(bodyParser.json());
+// app.use(bodyParser.json());
 
 // ROUTES
 app.get("/hello", (req, res) => {
