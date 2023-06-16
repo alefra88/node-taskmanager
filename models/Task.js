@@ -1,6 +1,8 @@
-const mongoose = require("mongoose")
+const mongoose = require("mongoose");
 
+const TaskSchema = new mongoose.Schema({
+  name: String,
+  completed: Boolean,
+});
 
-const TaskSchema =  new mongoose.Schema({
-  
-})
+model.exports = mongoose.model("Task", TaskSchema);
