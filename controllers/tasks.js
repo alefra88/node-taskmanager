@@ -1,7 +1,11 @@
 const Task = require("../models/Task");
 
-const getAllTasks = (req, res) => {
-  res.send("all items from the file");
+const getAllTasks = async (req, res) => {
+  try {
+    const tasks = await Task.find({});
+  } catch (error) {
+    res.status(500).json({ msg: error });
+  }
 };
 
 const createTask = async (req, res) => {
@@ -13,8 +17,12 @@ const createTask = async (req, res) => {
   }
 };
 
-const getTask = (req, res) => {
-  res.json({ id: req.params.id });
+const getTask = async (req, res) => {
+  try {
+    const task = await Task.findById({ id: req.params.id });
+  } catch (error) {
+    res.status(500).json({ msg: error });
+  }
 };
 
 const updateTask = (req, res) => {
