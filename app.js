@@ -4,14 +4,16 @@ const tasks = require("./routes/tasks");
 // const bodyParser = require("body-parser");
 const connectDB = require("./db/connect");
 require("dotenv").config();
+
 //MIDDLEWARE
 app.use(express.static('./public'))
 app.use(express.json());
-// app.use(bodyParser.json());
 
 // ROUTES 
 
 app.use("/api/v1/tasks", tasks);
+
+app.use()
 
 const port = 3000;
 
